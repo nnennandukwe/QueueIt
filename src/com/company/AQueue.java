@@ -78,6 +78,36 @@ package com.company;
             }
         }
 
+        /**
+         * @param elements
+         */
+        public void ensureCapacity(int elements){
+            if (maxSize() >= elements){
+                return;
+            }
+            else {
+                String[] newQ = new String[elements];
+
+                if (count > 0) {
+                    int tmp = head;
+                    for (int i = 0; i < count; i++) {
+
+                        newQ[i] = queue[tmp++];
+                        if (tmp == queue.length) {
+                            tmp = 0;
+                        }
+                    }
+                    head = 0;
+                    tail = count; // Set to 0
+                }
+                else {
+                    // Put nothing in old queue
+                    count = head = tail = 0;
+                }
+                queue = newQ;
+            }
+        }
+
         public String toString(){
             String rtn = "";
 
