@@ -1,5 +1,7 @@
 package com.company;
 
+import java.util.Scanner;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -24,7 +26,7 @@ public class Main {
 
         System.out.println(q);
 
-        // LINKEDLIST-BASED QUEUE
+        // LINKED LIST BASED QUEUE
         LQueue l = new LQueue();
 
         l.add("String 1");
@@ -36,5 +38,13 @@ public class Main {
         System.out.println("Removing " + l.remove());
 
         System.out.println(l);
+    }
+
+    public void sim(){
+
+        Scanner kbd = new Scanner(System.in);
+        System.out.println("Enter simulation length in minutes -> ");
+
+        int simulationLength = kbd.nextInt();
     }
 }
